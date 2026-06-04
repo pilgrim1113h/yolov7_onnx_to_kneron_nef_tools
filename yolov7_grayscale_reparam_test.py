@@ -267,15 +267,9 @@ def decode_onnx_outputs(outputs, conf_thres):
 #
 if __name__ == "__main__":
     #
-    img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\val2017 (filtered)\val2017\000000061418.jpg"
-    # img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\val2017 (filtered)\val2017\000000052412.jpg"
-    # img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\val2017 (filtered)\val2017\000000070774.jpg"
-    # img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\000000127263.jpg"
-    # img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\000000124442.jpg"
-    img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\val2017 (filtered)\val2017\000000057597.jpg"
-   # img_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\000000128372.jpg"
+    img_path = r"000000061418.jpg"
 
-    model_path = r"C:\Users\szsbl\PycharmProjects\Obj_Recognition_test2\reparam_kyv7g_20251224.onnx"  # reparameterized model only
+    model_path = r"reparam_kyv7g_00000000.onnx"  # reparameterized model only
    # model_path = r"v7test.onnx"  # reparameterized model only
     conf_thres = 0.25
     iou_thres = 0.45
