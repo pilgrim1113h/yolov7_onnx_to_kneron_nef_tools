@@ -51,7 +51,6 @@ final_img = draw_detections(image_paths[image_idx], boxes, scores, class_ids, pr
 final_img.show()
 final_img.save("/docker_mount/yv7_opt_onnx_test_output.jpg")
 
-<<<<<<< HEAD
 #
 # 이건 v11용..
 #
@@ -65,8 +64,6 @@ final_img.save("/docker_mount/yv7_opt_onnx_test_output.jpg")
 #img.show()
 #
 #
-=======
->>>>>>> 6626829e4c2d0ec86fbe0688043b6708b60ae210
 
 # analysis 는 compile 시 quantization을 위해 필요  - 약 1시간 소요됨
 bie_path = km.analysis(input_mapping, threads=8)
