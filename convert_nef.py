@@ -3,6 +3,7 @@ import ktc
 import kneronnxopt
 import os
 import sys
+import numpy as np
 
 sys.path.append("/docker_mount/")
 from yolov7_test_reparam import *  # v7
@@ -50,15 +51,18 @@ final_img = draw_detections(image_paths[image_idx], boxes, scores, class_ids, pr
 final_img.show()
 final_img.save("/docker_mount/yv7_opt_onnx_test_output.jpg")
 
+#
 # 이건 v11용..
-onnx_test_output = np.array(test_result_opt_onnx[0])
-onnx_test_output = onnx_test_output[0].transpose(1, 0)
-opt_onnx_result = postprocess(onnx_test_output, class_names=class_names, pad_wh=preprocessed_data[image_idx][1],
-                              scale=preprocessed_data[image_idx][2], orig_width=img.size[0], orig_height=img.size[1])
+#
+#onnx_test_output = np.array(test_result_opt_onnx[0])
+#onnx_test_output = onnx_test_output[0].transpose(1, 0)
+#opt_onnx_result = postprocess(onnx_test_output, class_names=class_names, pad_wh=preprocessed_data[image_idx][1],
+#                              scale=preprocessed_data[image_idx][2], orig_width=img.size[0], orig_height=img.size[1])
 
-for (x1, y1, x2, y2, conf, cls_name) in opt_onnx_result:
-    draw.rectangle([x1, y1, x2, y2], outline=(0, 255, 0), width=2)
-img.show()
+#for (x1, y1, x2, y2, conf, cls_name) in opt_onnx_result:
+#    draw.rectangle([x1, y1, x2, y2], outline=(0, 255, 0), width=2)
+#img.show()
+#
 #
 
 # analysis 는 compile 시 quantization을 위해 필요  - 약 1시간 소요됨
@@ -80,3 +84,5 @@ final_img = draw_detections(image_paths[image_idx], boxes, scores, class_ids, pr
                             preprocessed_data[image_idx][2])
 final_img.show()
 final_img.save("/docker_mount/yv7_nef_test_output.jpg")
+
+#3:02 -    optimized_kyv7_20251206.onnx
